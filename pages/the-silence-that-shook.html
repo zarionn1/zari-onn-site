@@ -39,26 +39,27 @@
       margin-top: 3rem;
       color: #ccc;
     }
-    .audio-player {
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .language-switcher {
+    .lang-switcher {
       position: fixed;
       top: 1rem;
       right: 1rem;
+      z-index: 999;
     }
-    .language-switcher img {
+    .lang-switcher img {
       width: 30px;
       margin-left: 10px;
       cursor: pointer;
     }
+    .audio-player {
+      text-align: center;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
-  <div class="language-switcher">
-    <img src="/images/flag_fr.png" alt="Français" onclick="window.location.href='/le-silence-qui-tremblait.html'">
-    <img src="/images/flag_en.png" alt="English" onclick="window.location.href='/the-silence-that-shook.html'">
+  <div class="lang-switcher">
+    <a href="/pages/le-silence-qui-tremblait.html"><img src="/images/fr.png" alt="Français" /></a>
+    <a href="/pages/the-silence-that-shook.html"><img src="/images/en.png" alt="English" /></a>
   </div>
 
   <div class="container">
