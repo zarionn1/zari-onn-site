@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,9 +38,37 @@
       margin-top: 3rem;
       color: #ccc;
     }
+    .language-switcher {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+    }
+    .language-switcher img {
+      width: 30px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
   </style>
+  <script>
+    function changeLanguage(lang) {
+      fetch('/lang.json')
+        .then(response => response.json())
+        .then(data => {
+          document.querySelector('h1').textContent = data[lang]['title'];
+          const ps = document.querySelectorAll('p');
+          data[lang]['paragraphs'].forEach((text, index) => {
+            if(ps[index]) ps[index].textContent = text;
+          });
+          document.querySelector('.signature').textContent = data[lang]['signature'];
+        });
+    }
+  </script>
 </head>
 <body>
+  <div class="language-switcher">
+    <img src="/images/fr.png" alt="Français" onclick="changeLanguage('fr')">
+    <img src="/images/en.png" alt="English" onclick="changeLanguage('en')">
+  </div>
   <div class="container">
     <h1>Le Silence qui Tremblait</h1>
     <p>Il n’y avait plus rien à dire. Plus rien à prouver. Le corps s'était tu. L’âme s’était montrée.</p>
@@ -55,4 +82,3 @@
   </div>
 </body>
 </html>
-<body style="background-image: url('/public/images/vortex-bg.png'); background-size: cover;">
