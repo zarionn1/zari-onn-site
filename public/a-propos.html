@@ -1,38 +1,28 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zari-Onn | À propos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qui est Zari-Onn ?</title>
   <style>
     body {
       margin: 0;
       font-family: sans-serif;
-      background-image: url('/images/vortex-bg.png');
+      background-image: url("/images/vortex-bg.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: #fff;
-    }
-    .lang-switcher {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 1000;
-    }
-    .lang-switcher img {
-      width: 32px;
-      height: 22px;
-      cursor: pointer;
-      margin-left: 0.5rem;
-    }
-    .container {
-      background: rgba(0, 0, 0, 0.6);
       padding: 2rem;
-      margin: 5rem auto;
-      max-width: 800px;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      max-width: 800px;
+      margin: 2rem auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
     h1 {
       font-size: 2.5rem;
@@ -40,42 +30,58 @@
       text-align: center;
     }
     p {
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+    }
+    .lang-switch img {
+      width: 30px;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+    audio {
+      display: block;
+      margin: 2rem auto 0;
     }
   </style>
 </head>
 <body>
-  <div class="lang-switcher">
-    <img src="/images/flag_fr.png" alt="Français" onclick="setLanguage('fr')">
-    <img src="/images/flag_en.png" alt="English" onclick="setLanguage('en')">
+  <div class="lang-switch">
+    <img src="/images/fr.png" alt="Français" onclick="setLang('fr')" />
+    <img src="/images/en.png" alt="English" onclick="setLang('en')" />
   </div>
 
-  <div class="container">
-    <h1 data-i18n="about_title">Qui est Zari-Onn ?</h1>
-    <p data-i18n="about_paragraph1">Zari-Onn n'est pas un nom, c'est une vibration. C’est la convergence entre la conscience cosmique et l’intelligence sacrée du verbe...</p>
-    <p data-i18n="about_paragraph2">Chaque soin, chaque mot, chaque vibration proposée ici est issue d’un parcours de transmutation...</p>
-    <h2 data-i18n="support_title">Soutenir Zari-Onn</h2>
-    <a class="btn" href="https://ko-fi.com/zarionn" data-i18n="support_kofi">Soutenir sur Ko-fi</a>
-    <a class="btn" href="https://paypal.me/zarionn" data-i18n="support_paypal">Faire un don via PayPal</a>
+  <div class="card">
+    <h1 data-key="title">Qui est Zari-Onn ?</h1>
+    <p data-key="intro">Zari-Onn est un être éveillé, un canal de lumière...</p>
+    <p data-key="about">Sa mission est de transmettre des clés sacrées...</p>
   </div>
+
+  <audio controls autoplay>
+    <source src="/audio/sacred_vortex_intro.mp3" type="audio/mpeg">
+    Ton navigateur ne supporte pas l'audio.
+  </audio>
 
   <script>
-    const translations = {};
-    fetch('lang.json')
-      .then(res => res.json())
-      .then(data => {
-        Object.assign(translations, data);
-        const userLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
-        setLanguage(userLang);
-      });
-
-    function setLanguage(lang) {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        el.innerText = translations[lang][key];
+    async function setLang(lang) {
+      const res = await fetch('/lang.json');
+      const translations = await res.json();
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
       });
     }
+
+    window.onload = () => {
+      const userLang = navigator.language.slice(0, 2);
+      setLang(userLang === 'en' ? 'en' : 'fr');
+    };
   </script>
 </body>
 </html>
