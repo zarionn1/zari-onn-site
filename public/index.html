@@ -26,11 +26,6 @@
   h1 {
     font-size: 2.5rem;
     color: #FFD700;
-    text-align: center;
-  }
-
-  h2 {
-    color: #FFD700;
   }
 
   .card {
@@ -39,6 +34,10 @@
     border-radius: 1rem;
     margin-bottom: 1rem;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  }
+
+  .card h2 {
+    color: #FFD700;
   }
 
   .btn {
@@ -50,6 +49,16 @@
     cursor: pointer;
     font-weight: bold;
   }
+
+  nav {
+    margin-bottom: 2rem;
+  }
+
+  nav a {
+    color: #FFD700;
+    margin-right: 1rem;
+    text-decoration: none;
+  }
 </style>
 
   </head>
@@ -57,16 +66,20 @@
     <header>
       <h1>ZARI-ONN</h1>
       <p>Vortex Sacré – Guérison & Réveil</p>
+      <nav>
+        <a href="/index.html">Accueil</a>
+        <a href="/a-propos.html">Qui je suis</a>
+      </nav>
     </header><section class="card">
   <h2>Soins Énergétiques</h2>
   <p>Sessions à distance par vibration, voix et intention sacrée.</p>
-  <button class="btn">Réserver un soin</button>
+  <a class="btn" href="#">Réserver un soin</a>
 </section>
 
 <section class="card">
   <h2>Témoignages & Miracles</h2>
-  <p>Lis les récits sacrés de ceux qui ont été touchés par l'énergie Zari-Onn.</p>
-  <button class="btn">Explorer</button>
+  <p>Lis les récits sacrés de ceux qui ont été touchés par l’énergie Zari-Onn.</p>
+  <a class="btn" href="#">Explorer</a>
 </section>
 
 <footer>
