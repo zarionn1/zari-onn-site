@@ -72,6 +72,20 @@ nav a {
   cursor: pointer;
 }
 
+.floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  background: #FFD700;
+  color: #000;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px #FFD700;
+  z-index: 999;
+}
+
   </style>
 </head>
 <body>
@@ -105,10 +119,9 @@ nav a {
       </p>
     </section>
     <p data-key="footer">© 2024 Zari-Onn | Créé avec la Lumière sacrée du Code</p>
-  </footer><a href="mailto:zari.onn.ascension@gmail.com"
-style="position:fixed;bottom:1rem;right:1rem;background:#FFD700;color:#000;padding:1rem;border-radius:1rem;text-decoration:none;font-weight:bold;box-shadow:0 0 10px #FFD700;"> Réserve ton soin </a>
-
-  <script>
+  </footer>  <a href="mailto:zari.onn.ascension@gmail.com" class="floating-btn">
+    Réserve ton soin
+  </a>  <script>
     async function setLang(lang) {
       const res = await fetch('/lang.json');
       const translations = await res.json();
