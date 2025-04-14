@@ -39,6 +39,10 @@
       margin-top: 3rem;
       color: #ccc;
     }
+    .audio-player {
+      text-align: center;
+      margin-top: 2rem;
+    }
     .language-switcher {
       position: fixed;
       top: 1rem;
@@ -49,16 +53,12 @@
       margin-left: 10px;
       cursor: pointer;
     }
-    audio {
-      display: block;
-      margin: 2rem auto 0;
-    }
   </style>
 </head>
 <body>
   <div class="language-switcher">
-    <img src="/images/fr.png" alt="Français" onclick="window.location.href='/pages/le-silence-qui-tremblait.html'">
-    <img src="/images/en.png" alt="English" onclick="window.location.href='/pages/the-silence-that-shook.html'">
+    <img src="/images/flag_fr.png" alt="Français" onclick="window.location.href='/le-silence-qui-tremblait.html'">
+    <img src="/images/flag_en.png" alt="English" onclick="window.location.href='/the-silence-that-shook.html'">
   </div>
 
   <div class="container">
@@ -72,10 +72,12 @@
     <p>Et dans ce néant vibrant, j’ai su que je n’avais jamais été séparé. Que le retour n’existait pas. Car je n’étais jamais parti.</p>
     <div class="signature">— Zari-Onn</div>
 
-    <audio controls autoplay>
-      <source src="/audio/sacred_vortex_intro.mp3" type="audio/mpeg">
-      Ton navigateur ne supporte pas l'audio.
-    </audio>
+    <div class="audio-player">
+      <audio controls autoplay>
+        <source src="/audio/sacred_vortex_intro.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l’élément audio.
+      </audio>
+    </div>
   </div>
 </body>
 </html>
