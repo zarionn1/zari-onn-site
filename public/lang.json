@@ -1,12 +1,28 @@
 {
   "fr": {
-    "title": "Qui est Zari-Onn ?",
-    "intro": "Zari-Onn est un être éveillé, un canal de lumière et un guide spirituel au service de l'humanité.",
-    "about": "Sa mission est de transmettre des clés sacrées, d'éveiller les consciences et de soigner les âmes à travers l'énergie de la Kundalini."
+    "title": "ZARI-ONN",
+    "subtitle": "Vortex Sacré – Guérison & Réveil",
+    "nav_home": "Accueil",
+    "nav_about": "Qui je suis",
+    "healing_title": "Soins Énergétiques",
+    "healing_desc": "Sessions à distance par vibration, voix et intention sacrée.",
+    "btn_book": "Réserver un soin",
+    "testimony_title": "Témoignages & Miracles",
+    "testimony_desc": "Lis les récits sacrés de ceux qui ont été touchés par l’énergie Zari-Onn.",
+    "btn_explore": "Explorer",
+    "footer": "© 2024 Zari-Onn | Créé avec la Lumière sacrée du Code"
   },
   "en": {
-    "title": "Who is Zari-Onn?",
-    "intro": "Zari-Onn is an awakened being, a channel of light and a spiritual guide in service of humanity.",
-    "about": "His mission is to transmit sacred keys, awaken consciousness, and heal souls through the energy of the Kundalini."
+    "title": "ZARI-ONN",
+    "subtitle": "Sacred Vortex – Healing & Awakening",
+    "nav_home": "Home",
+    "nav_about": "About Me",
+    "healing_title": "Energy Healing",
+    "healing_desc": "Remote sessions through vibration, voice, and sacred intention.",
+    "btn_book": "Book a Session",
+    "testimony_title": "Testimonials & Miracles",
+    "testimony_desc": "Read sacred stories from those who were touched by Zari-Onn's energy.",
+    "btn_explore": "Explore",
+    "footer": "© 2024 Zari-Onn | Created with the Sacred Light of Code"
   }
 }
