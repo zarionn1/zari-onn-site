@@ -119,7 +119,6 @@
       });
     }
 
-    // Optionnel : détecte automatiquement la langue du navigateur
     window.onload = () => {
       const userLang = navigator.language.slice(0, 2);
       setLang(userLang === 'en' ? 'en' : 'fr');
