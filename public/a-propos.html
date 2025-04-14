@@ -3,85 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qui est Zari-Onn ?</title>
+  <title>Le Silence qui Tremblait | Zari-Onn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-image: url("/images/vortex-bg.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #fff;
-      padding: 2rem;
+      padding: 0;
+      font-family: 'Zen Antique Soft', serif;
+      background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+      color: #f3f3f3;
+      padding: 3rem 2rem;
     }
-    .card {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      border-radius: 1rem;
-      max-width: 800px;
-      margin: 2rem auto;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-    h1 {
-      font-size: 2.5rem;
-      color: #FFD700;
-      text-align: center;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    .lang-switch {
+
+    .language-switcher {
       position: fixed;
       top: 1rem;
       right: 1rem;
+      z-index: 1000;
     }
-    .lang-switch img {
+
+    .language-switcher img {
       width: 30px;
-      margin-left: 0.5rem;
+      margin-left: 10px;
       cursor: pointer;
     }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.02);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #ffd369;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .signature {
+      text-align: right;
+      font-style: italic;
+      margin-top: 3rem;
+      color: #ccc;
+    }
+
     audio {
       display: block;
-      margin: 2rem auto 0;
+      margin: 3rem auto 0;
     }
   </style>
 </head>
 <body>
-  <div class="lang-switch">
-    <img src="/images/fr.png" alt="Français" onclick="setLang('fr')" />
-    <img src="/images/en.png" alt="English" onclick="setLang('en')" />
+
+  <div class="language-switcher">
+    <img src="/images/fr.png" alt="Français" onclick="window.location.href='/a-propos.html'">
+    <img src="/images/en.png" alt="English" onclick="window.location.href='/about.html'">
   </div>
 
-  <div class="card">
-    <h1 data-key="title">Qui est Zari-Onn ?</h1>
-    <p data-key="intro">Zari-Onn est un être éveillé, un canal de lumière...</p>
-    <p data-key="about">Sa mission est de transmettre des clés sacrées...</p>
+  <div class="container">
+    <h1>Le Silence qui Tremblait</h1>
+
+    <p>Il n’y avait plus rien à dire. Plus rien à prouver. Le corps s'était tu. L’âme s’était montrée.</p>
+    <p>Dans l’espace où le souffle ne fait plus de bruit, je l’ai entendu. C’était un battement ancien. Une vibration oubliée.</p>
+    <p>Ce n’était ni une voix, ni une pensée. C’était un souvenir. Un souvenir de ce que j’étais avant d’être moi.</p>
+    <p>Je n’étais plus un homme. Ni un nom. J’étais le tremblement du silence. La mémoire des étoiles. L’écho d’une vérité qui n’a pas besoin d’être expliquée.</p>
+    <p>Le monde autour de moi s’effaçait. Non pas parce qu’il mourait… mais parce que je naissais.</p>
+    <p>Je suis resté là. Présent. Vide. Plein. Conscient.</p>
+    <p>Et dans ce néant vibrant, j’ai su que je n’avais jamais été séparé. Que le retour n’existait pas. Car je n’étais jamais parti.</p>
+
+    <div class="signature">— Zari-Onn</div>
+
+    <audio controls autoplay>
+      <source src="/audio/sacred_vortex_intro.mp3" type="audio/mpeg">
+      Ton navigateur ne supporte pas la lecture audio.
+    </audio>
   </div>
 
-  <audio controls autoplay>
-    <source src="/audio/sacred_vortex_intro.mp3" type="audio/mpeg">
-    Ton navigateur ne supporte pas l'audio.
-  </audio>
-
-  <script>
-    async function setLang(lang) {
-      const res = await fetch('/lang.json');
-      const translations = await res.json();
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-    }
-
-    window.onload = () => {
-      const userLang = navigator.language.slice(0, 2);
-      setLang(userLang === 'en' ? 'en' : 'fr');
-    };
-  </script>
 </body>
 </html>
