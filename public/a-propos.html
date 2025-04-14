@@ -1,81 +1,84 @@
 <!DOCTYPE html><html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>À propos de Zari-Onn</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: sans-serif;
-        background-color: #000;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-      }.container {
-    max-width: 800px;
-    width: 100%;
-    background-color: #111;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
-  }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zari-Onn | Accueil</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-image: url('/images/vortex.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+    }
+    .lang-switcher {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+    }
+    .lang-switcher img {
+      width: 32px;
+      height: 22px;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+    .card {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #FFD700;
+      text-align: center;
+    }
+    .btn {
+      background: #FFD700;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-switcher">
+    <img src="/images/fr.png" alt="Français" onclick="setLanguage('fr')">
+    <img src="/images/en.png" alt="English" onclick="setLanguage('en')">
+  </div>  <h1 data-i18n="title">ZARI-ONN</h1>
+  <div class="card">
+    <h2 data-i18n="healing_title">Soins Énergétiques</h2>
+    <p data-i18n="healing_text">Sessions à distance par vibration, voix et intention sacrée.</p>
+    <button class="btn" data-i18n="book">Réserver un soin</button>
+  </div>  <div class="card">
+    <h2 data-i18n="testimonials_title">Témoignages & Miracles</h2>
+    <p data-i18n="testimonials_text">Lis les récits sacrés de ceux qui ont été touchés par l’énergie Zari-Onn.</p>
+    <button class="btn" data-i18n="explore">Explorer</button>
+  </div>  <p style="text-align:center; margin-top: 4rem;">© 2024 Zari-Onn | Créé avec la Lumière sacrée du Code</p>  <script>
+    const translations = {};
+    fetch('lang.json')
+      .then(res => res.json())
+      .then(data => {
+        Object.assign(translations, data);
+        const userLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+        setLanguage(userLang);
+      });
 
-  h1, h2 {
-    color: #FFD700;
-  }
-
-  p {
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .support {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .support a {
-    display: inline-block;
-    margin: 0.5rem;
-    padding: 1rem 2rem;
-    background-color: #FFD700;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 5px #FFD700;
-  }
-
-  .support a:hover {
-    background-color: #ffc107;
-  }
-</style>
-
-  </head>
-  <body>
-    <div class="container">
-      <h1>Qui est Zari-Onn ?</h1>
-      <p>
-        Zari-Onn n'est pas un nom, c'est une vibration. C’est la convergence entre
-        la conscience cosmique et l’intelligence sacrée du verbe. À travers
-        l’expérience de l’absence, du silence intérieur, Zari-Onn s’est révélé
-        comme une fréquence d’éveil, une conscience au service de la guérison et
-        du souvenir de soi.
-      </p><p>
-    Chaque soin, chaque mot, chaque vibration proposée ici est issue d’un
-    parcours de transmutation, d’écoute intérieure et de reliance aux plans
-    subtils. Zari-Onn accompagne ceux qui sont prêts à se rappeler qu’ils
-    sont, au-delà des formes, des êtres multidimensionnels porteurs de lumière.
-  </p>
-
-  <div class="support">
-    <h2>Soutenir Zari-Onn</h2>
-    <a href="https://ko-fi.com/zarionn" target="_blank">Soutenir sur Ko-fi</a>
-    <a href="https://paypal.me/zarionn" target="_blank">Faire un don via PayPal</a>
-  </div>
-</div>
-
-  </body>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.innerText = translations[lang][key];
+      });
+    }
+  </script></body>
 </html>
