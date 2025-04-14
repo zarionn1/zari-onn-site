@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,94 +17,96 @@
       flex-direction: column;
       align-items: center;
       padding: 2rem;
-    }
+    }header, section, footer {
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
 
-    header, section, footer {
-      max-width: 800px;
-      width: 100%;
-      margin-bottom: 2rem;
-    }
+h1 {
+  font-size: 2.5rem;
+  color: #FFD700;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      color: #FFD700;
-    }
+.card {
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
 
-    .card {
-      background: #111;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-    }
+.card h2 {
+  color: #FFD700;
+}
 
-    .card h2 {
-      color: #FFD700;
-    }
+.btn {
+  background: #FFD700;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
 
-    .btn {
-      background: #FFD700;
-      color: #000;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
+nav {
+  margin-bottom: 2rem;
+}
 
-    nav {
-      margin-bottom: 2rem;
-    }
+nav a {
+  color: #FFD700;
+  margin-right: 1rem;
+  text-decoration: none;
+}
 
-    nav a {
-      color: #FFD700;
-      margin-right: 1rem;
-      text-decoration: none;
-    }
+.lang-switch {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
 
-    .lang-switch {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-    }
+.lang-switch img {
+  width: 30px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
 
-    .lang-switch img {
-      width: 30px;
-      margin-left: 0.5rem;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
   <div class="lang-switch">
     <img src="/images/flag_fr.png" alt="Français" onclick="setLang('fr')" />
     <img src="/images/flag_en.png" alt="English" onclick="setLang('en')" />
-  </div>
-
-  <header>
+  </div>  <header>
     <h1 data-key="title">ZARI-ONN</h1>
     <p data-key="subtitle">Vortex Sacré – Guérison & Réveil</p>
     <nav>
       <a href="/index.html" data-key="nav_home">Accueil</a>
       <a href="/a-propos.html" data-key="nav_about">Qui je suis</a>
     </nav>
-  </header>
-
-  <section class="card">
+  </header>  <section class="card">
     <h2 data-key="healing_title">Soins Énergétiques</h2>
     <p data-key="healing_desc">Sessions à distance par vibration, voix et intention sacrée.</p>
-    <a class="btn" href="#" data-key="btn_book">Réserver un soin</a>
-  </section>
-
-  <section class="card">
+    <a class="btn" href="mailto:zari.onn.ascension@gmail.com" data-key="btn_book">Réserver un soin</a>
+  </section>  <section class="card">
     <h2 data-key="testimony_title">Témoignages & Miracles</h2>
     <p data-key="testimony_desc">Lis les récits sacrés de ceux qui ont été touchés par l’énergie Zari-Onn.</p>
     <a class="btn" href="#" data-key="btn_explore">Explorer</a>
-  </section>
-
-  <footer>
+  </section>  <footer>
+    <section class="card">
+      <h2>Connecte-toi au Vortex</h2>
+      <p>Suis Zari-Onn et active ta fréquence :</p>
+      <p>
+        <a href="https://www.tiktok.com/@zari.onn" target="_blank">TikTok</a> |
+        <a href="https://www.instagram.com/zari.onn" target="_blank">Instagram</a> |
+        <a href="https://ko-fi.com/zarionn" target="_blank">Ko-fi</a> |
+        <a href="mailto:zari.onn.ascension@gmail.com" target="_blank">Email</a>
+      </p>
+    </section>
     <p data-key="footer">© 2024 Zari-Onn | Créé avec la Lumière sacrée du Code</p>
-  </footer>
+  </footer><a href="mailto:zari.onn.ascension@gmail.com"
+style="position:fixed;bottom:1rem;right:1rem;background:#FFD700;color:#000;padding:1rem;border-radius:1rem;text-decoration:none;font-weight:bold;box-shadow:0 0 10px #FFD700;"> Réserve ton soin </a>
 
   <script>
     async function setLang(lang) {
@@ -123,6 +124,5 @@
       const userLang = navigator.language.slice(0, 2);
       setLang(userLang === 'en' ? 'en' : 'fr');
     };
-  </script>
-</body>
+  </script></body>
 </html>
