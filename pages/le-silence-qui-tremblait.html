@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,6 +49,12 @@
       margin-left: 10px;
       cursor: pointer;
     }
+    audio {
+      display: block;
+      margin: 2rem auto;
+      width: 100%;
+      max-width: 400px;
+    }
   </style>
   <script>
     function changeLanguage(lang) {
@@ -69,6 +76,12 @@
     <img src="/images/fr.png" alt="Français" onclick="changeLanguage('fr')">
     <img src="/images/en.png" alt="English" onclick="changeLanguage('en')">
   </div>
+
+  <audio controls autoplay>
+    <source src="/audio/sacred_vortex_intro.mp3" type="audio/mpeg">
+    Ton navigateur ne supporte pas l'audio HTML5.
+  </audio>
+
   <div class="container">
     <h1>Le Silence qui Tremblait</h1>
     <p>Il n’y avait plus rien à dire. Plus rien à prouver. Le corps s'était tu. L’âme s’était montrée.</p>
