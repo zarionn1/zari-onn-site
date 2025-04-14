@@ -53,18 +53,22 @@
 </head>
 <body>
   <div class="lang-switcher">
-    <img src="/images/fr.png" alt="Français" onclick="setLanguage('fr')">
-    <img src="/images/en.png" alt="English" onclick="setLanguage('en')">
-  </div>  <h1 data-i18n="title">ZARI-ONN</h1>
+    <img src="/images/flag_fr.png" alt="Français" onclick="setLanguage('fr')">
+    <img src="/images/flag_en.png" alt="English" onclick="setLanguage('en')">
+  </div>
+  <h1 data-i18n="title">ZARI-ONN</h1>
   <div class="card">
     <h2 data-i18n="healing_title">Soins Énergétiques</h2>
     <p data-i18n="healing_text">Sessions à distance par vibration, voix et intention sacrée.</p>
     <button class="btn" data-i18n="book">Réserver un soin</button>
-  </div>  <div class="card">
+  </div>
+  <div class="card">
     <h2 data-i18n="testimonials_title">Témoignages & Miracles</h2>
     <p data-i18n="testimonials_text">Lis les récits sacrés de ceux qui ont été touchés par l’énergie Zari-Onn.</p>
     <button class="btn" data-i18n="explore">Explorer</button>
-  </div>  <p style="text-align:center; margin-top: 4rem;">© 2024 Zari-Onn | Créé avec la Lumière sacrée du Code</p>  <script>
+  </div>
+  <p style="text-align:center; margin-top: 4rem;">© 2024 Zari-Onn | Créé avec la Lumière sacrée du Code</p>
+  <script>
     const translations = {};
     fetch('lang.json')
       .then(res => res.json())
@@ -80,5 +84,6 @@
         el.innerText = translations[lang][key];
       });
     }
-  </script></body>
+  </script>
+</body>
 </html>
